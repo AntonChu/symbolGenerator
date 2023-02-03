@@ -11,7 +11,7 @@ test('checkinf of the iterator correct work', () => {
       defence: 10,
     },
     {
-      name: 'Лучник',
+      name: 'Антон',
       type: 'Anton',
       health: 50,
       level: 1,
@@ -19,7 +19,7 @@ test('checkinf of the iterator correct work', () => {
       defence: 10,
     },
     {
-      name: 'Лучник',
+      name: 'Вася',
       type: 'Vlad',
       health: 50,
       level: 1,
@@ -27,6 +27,6 @@ test('checkinf of the iterator correct work', () => {
       defence: 10,
     },
   );
-  const result = ['Bowman', 'Anton'];
-  expect([...anton]).toEqual(result);
+  const result = ['Bowman', 'Anton', 'Vlad'];
+  expect(Array.from(anton)).toEqual(result);
 });

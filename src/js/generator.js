@@ -4,11 +4,10 @@ export default class Team {
   }
 
   * [Symbol.iterator]() {
-    const length = this.members.size - 1;
-    const arr = [];
-    this.members.forEach((hero) => arr.push(hero));
-    for (let i = 0; i < length; i++) {
-      yield arr[i].type;
+    const obj = {};
+    this.members.forEach((hero) => obj[hero.type] = hero); // eslint-disable-line
+    for (const item in obj) { // eslint-disable-line
+      yield item;
     }
   }
 }
