@@ -4,10 +4,8 @@ export default class Team {
   }
 
   * [Symbol.iterator]() {
-    const obj = {};
-    this.members.forEach((hero) => obj[hero.type] = hero); // eslint-disable-line
-    for (const item in obj) { // eslint-disable-line
-      yield item;
+    for (const item of this.members.keys()) { // eslint-disable-line
+      yield item.type;
     }
   }
 }
